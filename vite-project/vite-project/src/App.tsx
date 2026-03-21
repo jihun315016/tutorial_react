@@ -1,22 +1,25 @@
+import { useState } from 'react';
+
 export default function App() {
-  const handleCapture = () => {
-    console.log('parent');
-  }
-  
-  const handleBubble = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    console.log('child');
-    e.stopPropagation();
+  const [count, setCount] = useState(0);
+
+  // 상태 변경 함수는 아래 두 가지 방식으로 호출할 수 있다.
+  const clickHandler = () => {
+    // 1씩 증가
+    // setCount(count + 1);
+    // setCount(count + 1);
+
+    // 2씩 증가
+    // 이전 상태 값을 기반으로 상태 변경
+    setCount((count) => count + 1);
+    setCount((count) => count + 1);
   }
 
   return (
     <>
-      <div
-        // onClickCapture={handleCapture}
-        onClick={handleCapture}
-        style={{ padding: '50px', backgroundColor: '#f0f000'}}
-        >
-          Parent
-          <button onClick={handleBubble}>click</button>
+      <div>
+        <p>{count}</p>
+        <button onClick={clickHandler}>Value Change</button>
       </div>
     </>
   )
