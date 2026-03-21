@@ -1,17 +1,20 @@
-import { useReducer } from 'react';
-import { counterReducer } from './reducer/counterReducer';
+import { useState } from 'react';
+import Count from './components/Count';
+import Count2 from './components/Count2';
 
 export default function App() {
-  const [count, countDispatch] = useReducer(counterReducer, 0);
+  // 상태 관리 패턴 1
+  const [count, setCount] = useState(0);
+
+  // 상태 관리 패턴 2
+  const [count2, setCount2] = useState(0);
+  const increment = () => setCount2((count) => count + 1);
 
   return (
     <>
       <div>
-        <p>{count}</p>
-        <button onClick={() => countDispatch({ type: 'INCREMENT' })}>INCREMENT</button>
-        <button onClick={() => countDispatch({ type: 'DECREMENT' })}>DECREMENT</button>
-        <button onClick={() => countDispatch({ type: 'RESET' })}>RESET</button>
-        <button onClick={() => countDispatch({ type: '' })}>ERROR</button>
+        <Count count={count} setCount={setCount}></Count>
+        <Count2 count={count2} setCount={increment}></Count2>
       </div>
     </>
   )
