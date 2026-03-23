@@ -1,21 +1,17 @@
 import { useState } from 'react';
-import Count from './components/Count';
-import Count2 from './components/Count2';
+import CountDisplay from './components/CountDisplay';
+import CountButtons from './components/CountButtons';
 
 export default function App() {
-  // 상태 관리 패턴 1
   const [count, setCount] = useState(0);
-
-  // 상태 관리 패턴 2
-  const [count2, setCount2] = useState(0);
-  const increment = () => setCount2((count) => count + 1);
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(0);
 
   return (
     <>
-      <div>
-        <Count count={count} setCount={setCount}></Count>
-        <Count2 count={count2} setCount={increment}></Count2>
-      </div>
+      <CountDisplay count={count} />
+      <CountButtons increment={increment} decrement={decrement} reset={reset} />
     </>
   )
 }
