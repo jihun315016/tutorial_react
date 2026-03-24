@@ -1,0 +1,10 @@
+.btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+}
+
+.is-active {
+    background-color: skyblue;
+}
