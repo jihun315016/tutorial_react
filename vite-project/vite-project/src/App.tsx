@@ -1,24 +1,15 @@
-import ListItem from "./components/ListItem";
+import Input3 from "./components/Input3";
+import CheckBox2 from "./components/CheckBox2";
+import Radio2 from "./components/Radio2";
+import TextArea2 from "./components/textArea2";
 
 export default function App() {
-  const items = ['사과', '바나나', '딸기'];
-
   return (
     <>
-      {/* JSX 요소 반복 렌더링 */}
-      <ul>
-        {items.map((item, index) => {
-          return <li key={index}>{item}</li>
-        })}
-      </ul>
-
-
-      {/* 컴포넌트 반복 렌더링 */}
-      <ul>
-        {items.map((item, index) => {
-          return <ListItem key={index} text={item} />
-        })}
-      </ul>
+    <Input3 />
+    <CheckBox2 />
+    <Radio2 />
+    <TextArea2 />
     </>
   )
 }
