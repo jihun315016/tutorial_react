@@ -11,6 +11,10 @@ export default function Input3() {
         setFormState((formState) => ({
           ...formState,
           [e.target.name]: e.target.value
+          // [e.target.name]은 input 태그의 name 값
+          // ex) 
+          // name이 id인 input 태그에 Hello를 입력하면
+          // id: 'Hello'와 같은 효과를 준다.
         }));
       }
     

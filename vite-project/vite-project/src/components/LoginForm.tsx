@@ -25,6 +25,7 @@ export default function LoginForm() {
         setPassword(e.target.value);
     };
 
+
     // onSubmit 핸들러: 로그인 버튼을 눌렀을 때 실행
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         // 폼 제출 시 브라우저가 새로고침되는 기본 동작을 막음
@@ -60,6 +61,7 @@ export default function LoginForm() {
         setPassword(""); 
     };
 
+    
     return (
     // <form>의 onSubmit은 엔터를 쳤을 때도 작동함
     <form onSubmit={submitHandler}>

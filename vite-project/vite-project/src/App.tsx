@@ -1,9 +1,9 @@
-import LoginForm from "./components/LoginForm"
+import Dynamic from "./components/Dynamic"
 
 export default function App() {
   return (
     <>
-    <LoginForm />
+    <Dynamic />
     </>
   )
 }
