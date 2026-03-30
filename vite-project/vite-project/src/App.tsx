@@ -1,15 +1,13 @@
-import { useCallback, useState } from "react";
-import A from "./components/A";
+import { lazy, useState } from "react";
+const LazyComponent = lazy(() => import('./components/LazyComponent'));
 
 export default function App() {
-  console.log("App render");
-  const [count, setCount] = useState(0);
-  const increment = useCallback(() => setCount(count + 1), []);
+  const [show, setShow] = useState(false);
 
   return (
     <>
-      <h1>App Count: {count}</h1>
-      <A increment={increment} />
+      {show && <LazyComponent />}
+      <button onClick={() => setShow(!show)}>Toggle</button>
     </>
   );
 }
